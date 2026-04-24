@@ -45,13 +45,13 @@ export default function Hero() {
             <div className="mt-11 flex flex-wrap gap-4">
               <a
                 href="#contatti"
-                className="bg-primary px-[34px] py-[15px] font-body text-[14px] font-bold text-primary-foreground transition-all hover:-translate-y-px hover:opacity-90"
+                className="rounded-md bg-primary px-7 py-[12px] font-body text-[13px] font-bold text-primary-foreground transition-all hover:-translate-y-px hover:opacity-90"
               >
                 Inizia il progetto
               </a>
               <a
                 href="#portfolio"
-                className="border-[1.5px] border-[hsl(0,0%,27%)] px-[34px] py-[14px] font-body text-[14px] font-medium text-foreground transition-colors hover:border-[hsl(0,0%,53%)]"
+                className="rounded-md border-[1.5px] border-[hsl(0,0%,27%)] px-7 py-[11px] font-body text-[13px] font-medium text-foreground transition-colors hover:border-[hsl(0,0%,53%)]"
               >
                 Vedi i lavori
               </a>
