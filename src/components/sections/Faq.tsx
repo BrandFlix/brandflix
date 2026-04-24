@@ -3,7 +3,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Quanto tempo richiede un progetto completo?",
-    a: "Un naming con logo richiede mediamente 4–6 settimane. Un'identità completa con insegne, fotografia e video può richiedere 3–4 mesi. Ti diamo sempre una roadmap dettagliata prima di iniziare, con milestone chiare.",
+    a: "Le tempistiche variano in base alla complessità del progetto. Un naming con logo richiede generalmente poche settimane, mentre un'identità completa con insegne, fotografia e video richiede tempi più estesi. Ti diamo sempre una roadmap dettagliata prima di iniziare, con milestone chiare e scadenze condivise.",
   },
   {
     q: "Lavorate solo con nuove attività o anche con brand esistenti?",
