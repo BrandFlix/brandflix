@@ -107,6 +107,10 @@ export default {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        "payoff-scroll": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -115,6 +119,7 @@ export default {
         "ticker-right": "ticker-right 26s linear infinite",
         "magenta-pulse": "magenta-pulse 2s ease-in-out infinite",
         "fade-up": "fade-up 0.7s ease-out both",
+        "payoff-scroll": "payoff-scroll 22s linear infinite",
       },
     },
   },

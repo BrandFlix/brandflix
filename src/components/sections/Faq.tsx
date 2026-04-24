@@ -18,10 +18,6 @@ const faqs = [
     a: "Sì. Puoi chiederci solo la fotografia, solo il video, solo il restyling del logo. I risultati migliori arrivano quando lavoriamo su più touchpoint insieme, ma la scelta è sempre tua.",
   },
   {
-    q: "Lavorate anche fuori Policoro?",
-    a: "Sì. Design, naming e strategy li gestiamo completamente da remoto. Per fotografia e video valutiamo caso per caso.",
-  },
-  {
     q: "Come funziona il preventivo?",
     a: "Ogni progetto ha un preventivo su misura. Scrivici con una descrizione del tuo progetto e ti rispondiamo entro 48 ore con una proposta dettagliata.",
   },
@@ -90,7 +86,7 @@ export default function Faq() {
           </p>
           <a
             href="#contatti"
-            className="mt-7 inline-block bg-black px-[26px] py-[13px] font-body text-[13px] font-bold text-primary"
+            className="mt-7 inline-block rounded-md bg-black px-[22px] py-[11px] font-body text-[12px] font-bold text-primary"
           >
             Parliamo del tuo brand →
           </a>
