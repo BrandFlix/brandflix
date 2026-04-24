@@ -15,10 +15,17 @@ export default {
     extend: {
       colors: {
         border: "hsl(var(--border))",
+        "border-light": "hsl(var(--border-light))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        surface: "hsl(var(--surface))",
+        "surface-2": "hsl(var(--surface-2))",
+        light: "hsl(var(--light))",
+        magenta: "hsl(var(--magenta))",
+        amber: "hsl(var(--amber))",
+        "muted-2": "hsl(var(--muted-2))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -58,6 +65,10 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      fontFamily: {
+        display: ['"Barlow Condensed"', 'system-ui', 'sans-serif'],
+        body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -80,10 +91,30 @@ export default {
             height: "0",
           },
         },
+        "ticker-left": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "ticker-right": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        "magenta-pulse": {
+          "0%, 100%": { boxShadow: "0 0 0 0 hsla(322,100%,50%,0.7)", opacity: "1" },
+          "50%": { boxShadow: "0 0 0 8px hsla(322,100%,50%,0)", opacity: "0.85" },
+        },
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "ticker-left": "ticker-left 26s linear infinite",
+        "ticker-right": "ticker-right 26s linear infinite",
+        "magenta-pulse": "magenta-pulse 2s ease-in-out infinite",
+        "fade-up": "fade-up 0.7s ease-out both",
       },
     },
   },
