@@ -27,7 +27,7 @@ export default function Navbar() {
             Brand<span className="text-primary">Flix</span>
           </a>
 
-          <nav className="hidden items-center gap-9 md:flex">
+          <nav className="hidden items-center gap-9 sm:flex">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -41,14 +41,14 @@ export default function Navbar() {
 
           <a
             href="#contatti"
-            className="hidden bg-primary px-6 py-[10px] font-body text-[13px] font-bold text-primary-foreground transition-opacity hover:opacity-[0.88] md:inline-block"
+            className="hidden bg-primary px-6 py-[10px] font-body text-[13px] font-bold text-primary-foreground transition-opacity hover:opacity-[0.88] sm:inline-block"
           >
             Parliamoci →
           </a>
 
           <button
             aria-label="Apri menu"
-            className="text-foreground md:hidden"
+            className="text-foreground sm:hidden"
             onClick={() => setOpen(true)}
           >
             <Menu size={28} />
@@ -57,7 +57,7 @@ export default function Navbar() {
       </header>
 
       {open && (
-        <div className="fixed inset-0 z-[100] flex flex-col bg-background md:hidden">
+        <div className="fixed inset-0 z-[100] flex flex-col bg-background sm:hidden">
           <div className="flex h-[68px] items-center justify-between px-[5vw]">
             <span className="font-display text-[22px] font-black text-foreground">
               Brand<span className="text-primary">Flix</span>
