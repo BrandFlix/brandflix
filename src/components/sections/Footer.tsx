@@ -14,8 +14,8 @@ const cols = [
   {
     h: "Social",
     items: [
-      { l: "Instagram", href: "https://instagram.com/brandflix" },
-      { l: "Facebook", href: "https://facebook.com/brandflix" },
+      { l: "Instagram", href: "https://www.instagram.com/brandflix.it" },
+      { l: "Facebook", href: "https://www.facebook.com/brandflix.it" },
     ],
   },
   {
@@ -30,8 +30,8 @@ const cols = [
 ];
 
 const socialIcons = [
-  { l: "Instagram", href: "https://instagram.com/brandflix", Icon: Instagram },
-  { l: "Facebook", href: "https://facebook.com/brandflix", Icon: Facebook },
+  { l: "Instagram", href: "https://www.instagram.com/brandflix.it", Icon: Instagram },
+  { l: "Facebook", href: "https://www.facebook.com/brandflix.it", Icon: Facebook },
 ];
 
 export default function Footer() {
