@@ -1,16 +1,60 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/sections/Navbar";
+import Hero from "@/components/sections/Hero";
+import Ticker from "@/components/sections/Ticker";
+import About from "@/components/sections/About";
+import Portfolio from "@/components/sections/Portfolio";
+import Valori from "@/components/sections/Valori";
+import Servizi from "@/components/sections/Servizi";
+import Processo from "@/components/sections/Processo";
+import Faq from "@/components/sections/Faq";
+import Insights from "@/components/sections/Insights";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
+import WhatsAppButton from "@/components/sections/WhatsAppButton";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const ticker1 = [
+  "Naming aziendale",
+  "Logo & identità",
+  "Insegne & vetrine",
+  "Social media design",
+  "Fotografia corporate",
+  "Video istituzionale",
+  "Brand strategy",
+  "Restyling",
+];
+
+const ticker2 = [
+  "Brand strategy",
+  "Restyling",
+  "Naming",
+  "Logo & identità",
+  "Insegne",
+  "Video corporate",
+  "Fotografia",
+  "Social design",
+];
+
+const Index = () => {
+  useScrollReveal();
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <Hero />
+      <Ticker items={ticker1} />
+      <About />
+      <Ticker items={ticker2} reverse />
+      <Portfolio />
+      <Valori />
+      <Servizi />
+      <Processo />
+      <Faq />
+      <Insights />
+      <Contact />
+      <Footer />
+      <WhatsAppButton />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
