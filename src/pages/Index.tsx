@@ -7,7 +7,7 @@ import Valori from "@/components/sections/Valori";
 import Servizi from "@/components/sections/Servizi";
 import Processo from "@/components/sections/Processo";
 import Faq from "@/components/sections/Faq";
-import Insights from "@/components/sections/Insights";
+import Clienti from "@/components/sections/Clienti";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/sections/WhatsAppButton";
@@ -49,7 +49,7 @@ const Index = () => {
       <Servizi />
       <Processo />
       <Faq />
-      <Insights />
+      <Clienti />
       <Contact />
       <Footer />
       <WhatsAppButton />
