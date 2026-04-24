@@ -18,7 +18,7 @@ const faqs = [
     a: "Sì. Puoi chiederci solo la fotografia, solo il video, solo il restyling del logo. I risultati migliori arrivano quando lavoriamo su più touchpoint insieme, ma la scelta è sempre tua.",
   },
   {
-    q: "Lavorate anche fuori Roma?",
+    q: "Lavorate anche fuori Policoro?",
     a: "Sì. Design, naming e strategy li gestiamo completamente da remoto. Per fotografia e video valutiamo caso per caso.",
   },
   {
