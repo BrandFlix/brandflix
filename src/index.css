@@ -24,7 +24,7 @@ All colors MUST be HSL.
 
     --primary: 58 100% 50%;           /* #FFF300 signal yellow */
     --primary-foreground: 0 0% 0%;
-    --amber: 32 75% 41%;              /* #BA7517 amber for light bg */
+    --amber: 45 100% 45%;             /* #E6B800 golden yellow for light bg */
 
     --magenta: 322 100% 50%;          /* #FF0090 */
 
