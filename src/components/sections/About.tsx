@@ -22,7 +22,7 @@ export default function About() {
         </p>
         <a
           href="#servizi"
-          className="mt-8 inline-block bg-primary px-7 py-[14px] font-body text-[14px] font-bold text-primary-foreground hover:opacity-90"
+          className="mt-8 inline-block rounded-md bg-primary px-[22px] py-[11px] font-body text-[12px] font-bold text-primary-foreground hover:opacity-90"
         >
           Scopri i servizi →
         </a>

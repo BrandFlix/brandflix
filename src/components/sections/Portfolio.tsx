@@ -25,7 +25,7 @@ export default function Portfolio() {
         </div>
         <a
           href="#contatti"
-          className="border-[1.5px] border-[hsl(0,0%,80%)] px-[34px] py-[14px] font-body text-[14px] font-medium text-[hsl(0,0%,53%)] hover:border-black hover:text-black"
+          className="rounded-md border-[1.5px] border-[hsl(0,0%,80%)] px-7 py-[11px] font-body text-[13px] font-medium text-[hsl(0,0%,53%)] hover:border-black hover:text-black"
         >
           Parliamo del tuo progetto →
         </a>

@@ -125,7 +125,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={sent}
-            className={`mt-2 self-start px-9 py-4 font-body text-[15px] font-bold transition-all ${
+            className={`mt-2 self-start rounded-md px-7 py-[13px] font-body text-[13px] font-bold transition-all ${
               sent
                 ? "cursor-not-allowed bg-surface text-primary"
                 : "bg-primary text-primary-foreground hover:opacity-90"

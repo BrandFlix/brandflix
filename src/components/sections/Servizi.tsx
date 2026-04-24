@@ -114,7 +114,7 @@ export default function Servizi() {
           </div>
           <a
             href="#contatti"
-            className="mt-7 inline-block bg-black px-7 py-[14px] font-body text-[13px] font-bold text-primary"
+            className="mt-7 inline-block rounded-md bg-black px-[22px] py-[11px] font-body text-[12px] font-bold text-primary"
           >
             {t.cta}
           </a>

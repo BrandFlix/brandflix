@@ -85,7 +85,7 @@ export default function Processo() {
             </p>
             <a
               href="#contatti"
-              className="mt-6 inline-block bg-black px-[26px] py-[13px] font-body text-[13px] font-bold text-primary"
+              className="mt-6 inline-block rounded-md bg-black px-[22px] py-[11px] font-body text-[12px] font-bold text-primary"
             >
               Prenota la call →
             </a>

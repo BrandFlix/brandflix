@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
+import logo from "@/assets/logo-brandflix.png";
 
 const links = [
   { href: "#about", label: "Chi siamo" },
@@ -23,8 +24,8 @@ export default function Navbar() {
         }}
       >
         <div className="mx-auto flex h-full max-w-[1400px] items-center justify-between px-[5vw]">
-          <a href="#top" className="font-display text-[22px] font-black leading-none tracking-tight text-foreground">
-            Brand<span className="text-primary">Flix</span>
+          <a href="#top" className="flex items-center leading-none">
+            <img src={logo} alt="BrandFlix" className="h-7 w-auto sm:h-8" />
           </a>
 
           <nav className="hidden items-center gap-9 sm:flex">
@@ -59,9 +60,7 @@ export default function Navbar() {
       {open && (
         <div className="fixed inset-0 z-[100] flex flex-col bg-background sm:hidden">
           <div className="flex h-[68px] items-center justify-between px-[5vw]">
-            <span className="font-display text-[22px] font-black text-foreground">
-              Brand<span className="text-primary">Flix</span>
-            </span>
+            <img src={logo} alt="BrandFlix" className="h-7 w-auto" />
             <button aria-label="Chiudi menu" onClick={() => setOpen(false)} className="text-foreground">
               <X size={28} />
             </button>
