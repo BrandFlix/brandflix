@@ -60,16 +60,6 @@ export default function Hero() {
 
           {/* RIGHT */}
           <div className="flex flex-col items-start gap-6 lg:items-end">
-            <span
-              className="inline-block bg-primary px-6 py-3 font-display font-black uppercase text-primary-foreground"
-              style={{
-                fontSize: "clamp(22px, 2.6vw, 34px)",
-                letterSpacing: "-0.5px",
-                lineHeight: 1,
-              }}
-            >
-              Play your Business.
-            </span>
             <div className="flex w-full flex-col gap-4 sm:flex-row lg:flex-col lg:items-end">
               {[
                 { n: "94%", l: "Clienti che tornano" },
@@ -92,7 +82,27 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-20 flex items-center gap-6 border-t border-border px-0 pt-6">
+        {/* Payoff scrolling band */}
+        <div className="relative mt-16 -mx-[5vw] overflow-hidden border-y-2 border-primary bg-primary/95 py-5">
+          <div className="flex whitespace-nowrap animate-[ticker-left_18s_linear_infinite]">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <span
+                key={i}
+                className="mx-8 inline-flex items-center gap-8 font-display font-black uppercase text-primary-foreground"
+                style={{
+                  fontSize: "clamp(48px, 8vw, 110px)",
+                  letterSpacing: "-2px",
+                  lineHeight: 1,
+                }}
+              >
+                Play your Business.
+                <span className="text-magenta">◆</span>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 flex items-center gap-6 border-t border-border px-0 pt-6">
           <span className="h-px flex-1 bg-border" />
           <span className="font-body text-[11px] uppercase tracking-[2px] text-muted-2">
             Scorri per scoprire
