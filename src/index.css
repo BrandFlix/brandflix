@@ -8,35 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* BrandFlix design tokens — all HSL */
+    --background: 0 0% 4%;            /* #0A0A0A */
+    --foreground: 0 0% 100%;          /* #FFFFFF */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --surface: 0 0% 12%;              /* #1E1E1E */
+    --surface-2: 0 0% 8%;             /* #141414 */
+    --light: 0 0% 96%;                /* #F5F5F5 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 100%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: 58 100% 50%;           /* #FFF300 signal yellow */
+    --primary-foreground: 0 0% 0%;
+    --amber: 32 75% 41%;              /* #BA7517 amber for light bg */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --magenta: 322 100% 50%;          /* #FF0090 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 67%;     /* #AAAAAA */
+    --muted-2: 0 0% 40%;              /* #666666 */
+
+    --accent: 58 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 18%;               /* #2E2E2E */
+    --border-light: 0 0% 91%;         /* #E8E8E8 */
+    --input: 0 0% 18%;
+    --ring: 58 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +110,33 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Barlow Condensed', system-ui, sans-serif;
+  }
+  .font-body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .grid-overlay {
+    background-image:
+      repeating-linear-gradient(0deg, hsla(58,100%,50%,0.03) 0 1px, transparent 1px 64px),
+      repeating-linear-gradient(90deg, hsla(58,100%,50%,0.03) 0 1px, transparent 1px 64px);
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
