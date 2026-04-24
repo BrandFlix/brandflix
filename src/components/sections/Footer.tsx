@@ -1,3 +1,5 @@
+import { Facebook, Instagram } from "lucide-react";
+
 const cols = [
   {
     h: "Navigazione",
@@ -12,9 +14,8 @@ const cols = [
   {
     h: "Social",
     items: [
-      { l: "Instagram", href: "https://instagram.com" },
-      { l: "LinkedIn", href: "https://linkedin.com" },
-      { l: "Behance", href: "https://behance.net" },
+      { l: "Instagram", href: "https://instagram.com/brandflix" },
+      { l: "Facebook", href: "https://facebook.com/brandflix" },
     ],
   },
   {
@@ -29,9 +30,8 @@ const cols = [
 ];
 
 const socialIcons = [
-  { l: "IG", href: "https://instagram.com" },
-  { l: "LI", href: "https://linkedin.com" },
-  { l: "BE", href: "https://behance.net" },
+  { l: "Instagram", href: "https://instagram.com/brandflix", Icon: Instagram },
+  { l: "Facebook", href: "https://facebook.com/brandflix", Icon: Facebook },
 ];
 
 export default function Footer() {
@@ -81,9 +81,9 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label={s.l}
-              className="flex h-9 w-9 items-center justify-center border border-border font-body text-[11px] font-bold text-muted-2 transition-colors hover:border-primary hover:text-primary"
+              className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted-2 transition-colors hover:border-primary hover:text-primary"
             >
-              {s.l}
+              <s.Icon size={16} strokeWidth={2} />
             </a>
           ))}
         </div>
