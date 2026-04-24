@@ -17,7 +17,7 @@ export default function Hero() {
             <div className="mb-8 flex items-center gap-3">
               <span className="block h-2 w-2 animate-magenta-pulse rounded-full bg-magenta" />
               <span className="font-body text-[11px] uppercase tracking-[3px] text-muted-2">
-                Agenzia creativa · Roma
+                Agenzia creativa · Policoro
               </span>
             </div>
 
@@ -59,8 +59,15 @@ export default function Hero() {
           </div>
 
           {/* RIGHT */}
-          <div className="flex flex-col items-start gap-4 lg:items-end">
-            <span className="bg-primary px-[18px] py-2 font-body text-[10px] font-bold uppercase tracking-[2px] text-primary-foreground">
+          <div className="flex flex-col items-start gap-6 lg:items-end">
+            <span
+              className="inline-block bg-primary px-6 py-3 font-display font-black uppercase text-primary-foreground"
+              style={{
+                fontSize: "clamp(22px, 2.6vw, 34px)",
+                letterSpacing: "-0.5px",
+                lineHeight: 1,
+              }}
+            >
               Play your Business.
             </span>
             <div className="flex w-full flex-col gap-4 sm:flex-row lg:flex-col lg:items-end">
