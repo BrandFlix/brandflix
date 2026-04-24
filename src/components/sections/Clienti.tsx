@@ -9,6 +9,24 @@ const clients = [
   { name: "Brand Otto", sector: "Servizi" },
 ];
 
+const reviews = [
+  {
+    text: "BrandFlix ha rivoluzionato la nostra immagine. Professionalità, creatività e risultati concreti fin dal primo mese.",
+    author: "Marco R.",
+    role: "Titolare, Ristorante",
+  },
+  {
+    text: "Finalmente un'agenzia che ascolta davvero. Il restyling del brand ha portato un aumento reale di clienti in negozio.",
+    author: "Giulia P.",
+    role: "Founder, Beauty Store",
+  },
+  {
+    text: "Strategia chiara, esecuzione impeccabile. I social del nostro hotel non sono mai andati così bene. Consigliatissimi.",
+    author: "Luca M.",
+    role: "Direttore, Boutique Hotel",
+  },
+];
+
 export default function Clienti() {
   return (
     <section className="bg-light px-[5vw] py-24">
@@ -34,37 +52,62 @@ export default function Clienti() {
         </a>
       </div>
 
-      <div className="grid grid-cols-2 gap-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)] md:grid-cols-4">
+      {/* Logo grid — tutti stessa misura quadrata */}
+      <div className="grid grid-cols-2 gap-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)] sm:grid-cols-3 md:grid-cols-4">
         {clients.map((c) => (
           <div
             key={c.name}
-            className="reveal group relative flex aspect-[4/3] flex-col items-center justify-center bg-white p-6 transition-all duration-300 hover:bg-[hsl(0,0%,98%)]"
+            className="reveal group relative flex aspect-square flex-col items-center justify-center overflow-hidden bg-white p-6 transition-all duration-300 hover:bg-[hsl(0,0%,98%)]"
           >
-            <span className="font-display text-[22px] font-black uppercase tracking-tight text-black transition-colors group-hover:text-amber md:text-[26px]">
+            <span className="font-display text-[22px] font-black uppercase tracking-tight text-black transition-colors group-hover:text-black md:text-[26px]">
               {c.name}
             </span>
             <span className="mt-2 font-body text-[10px] font-semibold uppercase tracking-[2px] text-[hsl(0,0%,53%)]">
               {c.sector}
             </span>
-            <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-amber transition-all duration-300 group-hover:w-full" />
+            {/* Linea gialla BrandFlix on hover */}
+            <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
           </div>
         ))}
       </div>
 
-      <div className="reveal mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 border-t border-[hsl(0,0%,91%)] pt-10 text-center">
-        <div className="font-body text-[13px] text-[hsl(0,0%,40%)]">
-          <span className="font-display text-[28px] font-black text-black">50+</span>
-          <span className="ml-2 uppercase tracking-[2px]">brand trasformati</span>
+      {/* Recensioni */}
+      <div className="reveal mt-20">
+        <div className="mb-10 flex items-center gap-3">
+          <span className="block h-[1px] w-10 bg-black" />
+          <span className="font-body text-[10px] font-semibold uppercase tracking-[4px] text-black">
+            Cosa dicono di noi
+          </span>
         </div>
-        <span className="block h-[3px] w-[3px] rounded-full bg-magenta" />
-        <div className="font-body text-[13px] text-[hsl(0,0%,40%)]">
-          <span className="font-display text-[28px] font-black text-black">8</span>
-          <span className="ml-2 uppercase tracking-[2px]">anni di esperienza</span>
-        </div>
-        <span className="block h-[3px] w-[3px] rounded-full bg-magenta" />
-        <div className="font-body text-[13px] text-[hsl(0,0%,40%)]">
-          <span className="font-display text-[28px] font-black text-black">100<span className="text-magenta">%</span></span>
-          <span className="ml-2 uppercase tracking-[2px]">progetti consegnati</span>
+
+        <div className="grid grid-cols-1 gap-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)] md:grid-cols-3">
+          {reviews.map((r) => (
+            <article
+              key={r.author}
+              className="group relative flex flex-col justify-between bg-white p-8 transition-colors duration-300 hover:bg-[hsl(0,0%,98%)]"
+            >
+              <div>
+                <span
+                  className="font-display text-[60px] font-black leading-none text-primary"
+                  aria-hidden
+                >
+                  &ldquo;
+                </span>
+                <p className="-mt-4 font-body text-[15px] leading-relaxed text-black">
+                  {r.text}
+                </p>
+              </div>
+              <div className="mt-8 border-t border-[hsl(0,0%,91%)] pt-4">
+                <div className="font-display text-[18px] font-black uppercase tracking-tight text-black">
+                  {r.author}
+                </div>
+                <div className="font-body text-[11px] font-medium uppercase tracking-[2px] text-[hsl(0,0%,53%)]">
+                  {r.role}
+                </div>
+              </div>
+              <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
+            </article>
+          ))}
         </div>
       </div>
     </section>
