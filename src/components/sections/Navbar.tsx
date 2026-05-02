@@ -5,7 +5,7 @@ import logo from "@/assets/logo-brandflix.png";
 
 const links = [
   { href: "#about", label: "Chi siamo" },
-  { href: "#portfolio", label: "Portfolio" },
+  { href: "#clienti", label: "Clienti" },
   { href: "#servizi", label: "Servizi" },
   { href: "#contatti", label: "Contatti" },
 ];

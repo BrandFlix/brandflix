@@ -50,7 +50,7 @@ export default function Hero() {
                 Inizia il progetto
               </a>
               <a
-                href="#portfolio"
+                href="#clienti"
                 className="rounded-md border-[1.5px] border-[hsl(0,0%,27%)] px-7 py-[11px] font-body text-[13px] font-medium text-foreground transition-colors hover:border-[hsl(0,0%,53%)]"
               >
                 Vedi i lavori

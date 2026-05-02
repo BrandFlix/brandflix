@@ -29,7 +29,7 @@ const reviews = [
 
 export default function Clienti() {
   return (
-    <section className="bg-light px-[5vw] py-24">
+    <section id="clienti" className="bg-light px-[5vw] py-24">
       <div className="reveal mb-12 flex flex-wrap items-end justify-between gap-6">
         <div>
           <div className="mb-3 flex items-center gap-2 font-body text-[10px] font-semibold uppercase tracking-[4px] text-[hsl(0,0%,53%)]">

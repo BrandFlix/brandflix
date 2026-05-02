@@ -2,7 +2,6 @@ import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import Ticker from "@/components/sections/Ticker";
 import About from "@/components/sections/About";
-import Portfolio from "@/components/sections/Portfolio";
 import Valori from "@/components/sections/Valori";
 import Servizi from "@/components/sections/Servizi";
 import Processo from "@/components/sections/Processo";
@@ -44,7 +43,6 @@ const Index = () => {
       <Ticker items={ticker1} />
       <About />
       <Ticker items={ticker2} reverse />
-      <Portfolio />
       <Valori />
       <Servizi />
       <Processo />
