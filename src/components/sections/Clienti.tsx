@@ -1,12 +1,22 @@
 const clients = [
-  { name: "Brand Uno", sector: "Ristorazione" },
-  { name: "Brand Due", sector: "Retail" },
-  { name: "Brand Tre", sector: "Beauty" },
-  { name: "Brand Quattro", sector: "Hospitality" },
-  { name: "Brand Cinque", sector: "Fashion" },
-  { name: "Brand Sei", sector: "Food & Beverage" },
-  { name: "Brand Sette", sector: "Wellness" },
-  { name: "Brand Otto", sector: "Servizi" },
+  { name: "Brand Uno" },
+  { name: "Brand Due" },
+  { name: "Brand Tre" },
+  { name: "Brand Quattro" },
+  { name: "Brand Cinque" },
+  { name: "Brand Sei" },
+  { name: "Brand Sette" },
+  { name: "Brand Otto" },
+  { name: "Brand Nove" },
+  { name: "Brand Dieci" },
+  { name: "Brand Undici" },
+  { name: "Brand Dodici" },
+  { name: "Brand Tredici" },
+  { name: "Brand Quattordici" },
+  { name: "Brand Quindici" },
+  { name: "Brand Sedici" },
+  { name: "Brand Diciassette" },
+  { name: "Brand Diciotto" },
 ];
 
 const reviews = [
@@ -52,23 +62,10 @@ export default function Clienti() {
         </a>
       </div>
 
-      {/* Logo grid — tutti stessa misura quadrata */}
-      <div className="grid grid-cols-2 gap-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)] sm:grid-cols-3 md:grid-cols-4">
-        {clients.map((c) => (
-          <div
-            key={c.name}
-            className="reveal group relative flex aspect-square flex-col items-center justify-center overflow-hidden bg-white p-6 transition-all duration-300 hover:bg-[hsl(0,0%,98%)]"
-          >
-            <span className="font-display text-[22px] font-black uppercase tracking-tight text-black transition-colors group-hover:text-black md:text-[26px]">
-              {c.name}
-            </span>
-            <span className="mt-2 font-body text-[10px] font-semibold uppercase tracking-[2px] text-[hsl(0,0%,53%)]">
-              {c.sector}
-            </span>
-            {/* Linea gialla BrandFlix on hover */}
-            <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
-          </div>
-        ))}
+      {/* Logo marquee — doppia riga a scorrimento opposto */}
+      <div className="reveal space-y-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)]">
+        <LogoMarquee items={clients.slice(0, 9)} />
+        <LogoMarquee items={clients.slice(9)} reverse />
       </div>
 
       {/* Recensioni */}
@@ -111,5 +108,34 @@ export default function Clienti() {
         </div>
       </div>
     </section>
+  );
+}
+
+function LogoMarquee({
+  items,
+  reverse,
+}: {
+  items: { name: string }[];
+  reverse?: boolean;
+}) {
+  const doubled = [...items, ...items];
+  return (
+    <div className="group/marquee overflow-hidden bg-white">
+      <div
+        className={`flex w-max ${reverse ? "animate-ticker-right" : "animate-ticker-left"} group-hover/marquee:[animation-play-state:paused]`}
+      >
+        {doubled.map((c, i) => (
+          <div
+            key={i}
+            className="group/logo relative flex h-[120px] w-[240px] shrink-0 items-center justify-center border-r border-[hsl(0,0%,91%)] px-8 transition-colors duration-300 hover:bg-[hsl(0,0%,98%)]"
+          >
+            <span className="font-display text-[24px] font-black uppercase tracking-tight text-[hsl(0,0%,53%)] transition-colors duration-300 group-hover/logo:text-black">
+              {c.name}
+            </span>
+            <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-primary transition-all duration-300 group-hover/logo:w-full" />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
