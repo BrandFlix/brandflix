@@ -17,6 +17,16 @@ const clients = [
   { name: "Brand Sedici" },
   { name: "Brand Diciassette" },
   { name: "Brand Diciotto" },
+  { name: "Brand Diciannove" },
+  { name: "Brand Venti" },
+  { name: "Brand Ventuno" },
+  { name: "Brand Ventidue" },
+  { name: "Brand Ventitré" },
+  { name: "Brand Ventiquattro" },
+  { name: "Brand Venticinque" },
+  { name: "Brand Ventisei" },
+  { name: "Brand Ventisette" },
+  { name: "Brand Ventotto" },
 ];
 
 const reviews = [
@@ -64,8 +74,8 @@ export default function Clienti() {
 
       {/* Logo marquee — doppia riga a scorrimento opposto */}
       <div className="reveal space-y-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)]">
-        <LogoMarquee items={clients.slice(0, 9)} />
-        <LogoMarquee items={clients.slice(9)} reverse />
+        <LogoMarquee items={clients.slice(0, 14)} />
+        <LogoMarquee items={clients.slice(14)} reverse />
       </div>
 
       {/* Recensioni */}
