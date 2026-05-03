@@ -63,6 +63,22 @@ export default function About() {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 border-l-[3px] border-magenta pl-6">
+          <h4
+            className="font-display font-black uppercase text-black"
+            style={{ fontSize: "clamp(22px,2.2vw,28px)", lineHeight: 1.1 }}
+          >
+            Un logo fatto con l'AI in 30 secondi <span className="text-magenta">non è un brand.</span>
+          </h4>
+          <p className="mt-4 max-w-[560px] font-body text-[15px] leading-[1.75] text-[hsl(0,0%,40%)]">
+            Oggi chiunque può generare un logo con l'intelligenza artificiale e pensare di aver
+            chiuso la pratica. Ma un logo, per funzionare davvero, deve essere{" "}
+            <strong className="text-black">proporzionato, pulito e vettorializzato</strong> —
+            pronto a vivere su un'insegna, un biglietto da visita, un packaging o uno schermo,
+            senza perdere un grammo di personalità. È qui che inizia il nostro lavoro.
+          </p>
+        </div>
       </div>
     </section>
   );
