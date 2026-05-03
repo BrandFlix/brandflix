@@ -137,7 +137,7 @@ function LogoMarquee({
         {doubled.map((c, i) => (
           <div
             key={i}
-            className="group/logo relative flex h-[120px] w-[240px] shrink-0 items-center justify-center border-r border-[hsl(0,0%,91%)] px-8 grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100 hover:bg-[hsl(0,0%,98%)]"
+            className="group/logo relative flex h-[160px] w-[200px] shrink-0 items-center justify-center border-r border-[hsl(0,0%,91%)] px-6 grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100 hover:bg-[hsl(0,0%,98%)]"
           >
             <span className="font-display text-[24px] font-black uppercase tracking-tight text-[hsl(0,0%,53%)] transition-colors duration-300 group-hover/logo:text-black">
               {c.name}
