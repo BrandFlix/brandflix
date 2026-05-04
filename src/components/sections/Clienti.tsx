@@ -18,6 +18,14 @@ import brand17 from "@/assets/clients/brand17.png";
 import brand18 from "@/assets/clients/brand18.png";
 import brand19 from "@/assets/clients/brand19.png";
 import brand20 from "@/assets/clients/brand20.png";
+import brand21 from "@/assets/clients/brand21.png";
+import brand22 from "@/assets/clients/brand22.png";
+import brand23 from "@/assets/clients/brand23.png";
+import brand24 from "@/assets/clients/brand24.png";
+import brand25 from "@/assets/clients/brand25.png";
+import brand26 from "@/assets/clients/brand26.png";
+import brand27 from "@/assets/clients/brand27.png";
+import brand28 from "@/assets/clients/brand28.png";
 
 const clients = [
   { name: "Soc. Agricola Amati", logo: brand1 },
@@ -40,6 +48,14 @@ const clients = [
   { name: "Riabilita", logo: brand18 },
   { name: "Pellitta Tartufi", logo: brand19 },
   { name: "GT Arreda", logo: brand20 },
+  { name: "Good Vibes Club & Restaurant", logo: brand21 },
+  { name: "SunSpritz — Aperitivo Vista Mare", logo: brand22 },
+  { name: "Nautilus Music & Lights", logo: brand23 },
+  { name: "Rovlar — Made in Italy", logo: brand24 },
+  { name: "Tropical", logo: brand25 },
+  { name: "Bristorante La Pizzeria", logo: brand26 },
+  { name: "Scacco Matto Food", logo: brand27 },
+  { name: "Allevamento Podolica Glisci", logo: brand28 },
 ];
 
 const reviews = [
@@ -87,8 +103,8 @@ export default function Clienti() {
 
       {/* Logo marquee — doppia riga a scorrimento opposto */}
       <div className="reveal space-y-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)]">
-        <LogoMarquee items={clients.slice(0, 10)} />
-        <LogoMarquee items={clients.slice(10)} reverse />
+        <LogoMarquee items={clients.slice(0, 14)} />
+        <LogoMarquee items={clients.slice(14)} reverse />
       </div>
 
       {/* Recensioni */}
