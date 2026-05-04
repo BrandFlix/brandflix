@@ -1,32 +1,25 @@
+import brand1 from "@/assets/clients/brand1.png";
+import brand2 from "@/assets/clients/brand2.png";
+import brand3 from "@/assets/clients/brand3.png";
+import brand4 from "@/assets/clients/brand4.png";
+import brand5 from "@/assets/clients/brand5.png";
+import brand6 from "@/assets/clients/brand6.png";
+import brand7 from "@/assets/clients/brand7.png";
+import brand8 from "@/assets/clients/brand8.png";
+import brand9 from "@/assets/clients/brand9.png";
+import brand10 from "@/assets/clients/brand10.png";
+
 const clients = [
-  { name: "Brand Uno" },
-  { name: "Brand Due" },
-  { name: "Brand Tre" },
-  { name: "Brand Quattro" },
-  { name: "Brand Cinque" },
-  { name: "Brand Sei" },
-  { name: "Brand Sette" },
-  { name: "Brand Otto" },
-  { name: "Brand Nove" },
-  { name: "Brand Dieci" },
-  { name: "Brand Undici" },
-  { name: "Brand Dodici" },
-  { name: "Brand Tredici" },
-  { name: "Brand Quattordici" },
-  { name: "Brand Quindici" },
-  { name: "Brand Sedici" },
-  { name: "Brand Diciassette" },
-  { name: "Brand Diciotto" },
-  { name: "Brand Diciannove" },
-  { name: "Brand Venti" },
-  { name: "Brand Ventuno" },
-  { name: "Brand Ventidue" },
-  { name: "Brand Ventitré" },
-  { name: "Brand Ventiquattro" },
-  { name: "Brand Venticinque" },
-  { name: "Brand Ventisei" },
-  { name: "Brand Ventisette" },
-  { name: "Brand Ventotto" },
+  { name: "Soc. Agricola Amati", logo: brand1 },
+  { name: "Centro Arredamenti", logo: brand2 },
+  { name: "Dalmia Market", logo: brand3 },
+  { name: "Lavéa Nature", logo: brand4 },
+  { name: "Rondinelli Strutture Metalliche", logo: brand5 },
+  { name: "Kalindi Viaggi", logo: brand6 },
+  { name: "Red Restaurant", logo: brand7 },
+  { name: "Ciani — I Migliori Grani", logo: brand8 },
+  { name: "DoniZi", logo: brand9 },
+  { name: "Market dei Sapori", logo: brand10 },
 ];
 
 const reviews = [
@@ -74,8 +67,8 @@ export default function Clienti() {
 
       {/* Logo marquee — doppia riga a scorrimento opposto */}
       <div className="reveal space-y-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)]">
-        <LogoMarquee items={clients.slice(0, 14)} />
-        <LogoMarquee items={clients.slice(14)} reverse />
+        <LogoMarquee items={clients.slice(0, 5)} />
+        <LogoMarquee items={clients.slice(5)} reverse />
       </div>
 
       {/* Recensioni */}
@@ -125,7 +118,7 @@ function LogoMarquee({
   items,
   reverse,
 }: {
-  items: { name: string }[];
+  items: { name: string; logo: string }[];
   reverse?: boolean;
 }) {
   const doubled = [...items, ...items];
@@ -139,9 +132,12 @@ function LogoMarquee({
             key={i}
             className="group/logo relative flex h-[160px] w-[200px] shrink-0 items-center justify-center border-r border-[hsl(0,0%,91%)] px-6 grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100 hover:bg-[hsl(0,0%,98%)]"
           >
-            <span className="font-display text-[24px] font-black uppercase tracking-tight text-[hsl(0,0%,53%)] transition-colors duration-300 group-hover/logo:text-black">
-              {c.name}
-            </span>
+            <img
+              src={c.logo}
+              alt={c.name}
+              loading="lazy"
+              className="max-h-[120px] max-w-[140px] object-contain"
+            />
             <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-primary transition-all duration-300 group-hover/logo:w-full" />
           </div>
         ))}
