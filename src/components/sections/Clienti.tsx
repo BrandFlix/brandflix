@@ -8,6 +8,16 @@ import brand7 from "@/assets/clients/brand7.png";
 import brand8 from "@/assets/clients/brand8.png";
 import brand9 from "@/assets/clients/brand9.png";
 import brand10 from "@/assets/clients/brand10.png";
+import brand11 from "@/assets/clients/brand11.png";
+import brand12 from "@/assets/clients/brand12.png";
+import brand13 from "@/assets/clients/brand13.png";
+import brand14 from "@/assets/clients/brand14.png";
+import brand15 from "@/assets/clients/brand15.png";
+import brand16 from "@/assets/clients/brand16.png";
+import brand17 from "@/assets/clients/brand17.png";
+import brand18 from "@/assets/clients/brand18.png";
+import brand19 from "@/assets/clients/brand19.png";
+import brand20 from "@/assets/clients/brand20.png";
 
 const clients = [
   { name: "Soc. Agricola Amati", logo: brand1 },
@@ -20,6 +30,16 @@ const clients = [
   { name: "Ciani — I Migliori Grani", logo: brand8 },
   { name: "DoniZi", logo: brand9 },
   { name: "Market dei Sapori", logo: brand10 },
+  { name: "Bar il Gioiello", logo: brand11 },
+  { name: "Lo Tito — Olio Extravergine", logo: brand12 },
+  { name: "Azienda Agricola Lacertosa", logo: brand13 },
+  { name: "Demuro Mario Chef", logo: brand14 },
+  { name: "EdilVivo Ristrutturazioni", logo: brand15 },
+  { name: "Magnifique Studio Estetico", logo: brand16 },
+  { name: "Rago — Prodotti Biologici", logo: brand17 },
+  { name: "Riabilita", logo: brand18 },
+  { name: "Pellitta Tartufi", logo: brand19 },
+  { name: "GT Arreda", logo: brand20 },
 ];
 
 const reviews = [
@@ -67,8 +87,8 @@ export default function Clienti() {
 
       {/* Logo marquee — doppia riga a scorrimento opposto */}
       <div className="reveal space-y-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)]">
-        <LogoMarquee items={clients.slice(0, 5)} />
-        <LogoMarquee items={clients.slice(5)} reverse />
+        <LogoMarquee items={clients.slice(0, 10)} />
+        <LogoMarquee items={clients.slice(10)} reverse />
       </div>
 
       {/* Recensioni */}
