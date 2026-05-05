@@ -58,30 +58,6 @@ const clients = [
   { name: "Allevamento Podolica Glisci", logo: brand28 },
 ];
 
-const caseStudies = [
-  {
-    n: 1,
-    sector: "Ristorazione",
-    title: "[Titolo case study]",
-    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
-    result: "[+X% di vendite in Y mesi]",
-  },
-  {
-    n: 2,
-    sector: "Beauty",
-    title: "[Titolo case study]",
-    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
-    result: "[+X% nuovi clienti in Y mesi]",
-  },
-  {
-    n: 3,
-    sector: "Hospitality",
-    title: "[Titolo case study]",
-    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
-    result: "[+X% prenotazioni dirette]",
-  },
-];
-
 const reviews = [
   {
     text: "[Testimonianza specifica con un episodio o un risultato concreto. Es: «Dopo il rebrand abbiamo aperto due punti vendita in 8 mesi e i clienti ci riconoscono anche fuori dalla nostra città.» — minimo 4 righe, evitare frasi generiche tipo «ottimo lavoro» o «molto professionali».]",
@@ -132,63 +108,6 @@ export default function Clienti() {
       <div className="reveal space-y-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)]">
         <LogoMarquee items={clients.slice(0, 14)} />
         <LogoMarquee items={clients.slice(14)} reverse />
-      </div>
-
-      {/* Case study in evidenza */}
-      <div className="reveal mt-20">
-        <div className="mb-10 flex items-center gap-3">
-          <span className="block h-[1px] w-10 bg-black" />
-          <span className="font-body text-[10px] font-semibold uppercase tracking-[4px] text-black">
-            Case study in evidenza
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 gap-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)] md:grid-cols-3">
-          {caseStudies.map((cs) => (
-            <a
-              key={cs.title}
-              href="#contatti"
-              className="group relative flex flex-col bg-white transition-colors duration-300 hover:bg-[hsl(0,0%,98%)]"
-              aria-label={`Leggi il case study: ${cs.title}`}
-            >
-              {/* Image 16:9 placeholder */}
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-[hsl(0,0%,93%)]">
-                <div className="absolute inset-0 flex items-center justify-center font-body text-[11px] font-semibold uppercase tracking-[3px] text-[hsl(0,0%,53%)]">
-                  [IMMAGINE CASE STUDY {cs.n}]
-                </div>
-              </div>
-
-              <div className="flex flex-1 flex-col p-8">
-                <div className="font-body text-[10px] font-semibold uppercase tracking-[3px] text-[hsl(0,0%,53%)]">
-                  {cs.sector}
-                </div>
-                <div className="mt-3 font-display text-[22px] font-black uppercase leading-[1.05] tracking-tight text-black">
-                  {cs.title}
-                </div>
-                <p className="mt-3 font-body text-[14px] leading-[1.65] text-[hsl(0,0%,40%)]">
-                  {cs.desc}
-                </p>
-
-                <div className="mt-6 border-t border-[hsl(0,0%,91%)] pt-5">
-                  <div className="font-body text-[10px] uppercase tracking-[2px] text-[hsl(0,0%,53%)]">
-                    Risultato
-                  </div>
-                  <div
-                    className="mt-1 font-display font-black uppercase leading-[1] text-amber"
-                    style={{ fontSize: "clamp(28px,2.6vw,34px)" }}
-                  >
-                    {cs.result}
-                  </div>
-                </div>
-
-                <span className="mt-7 inline-flex items-center gap-2 font-body text-[12px] font-bold uppercase tracking-[2px] text-black transition-all group-hover:gap-3">
-                  Leggi il case study →
-                </span>
-              </div>
-              <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
-            </a>
-          ))}
-        </div>
       </div>
 
       {/* Recensioni */}
