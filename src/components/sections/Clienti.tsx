@@ -201,10 +201,10 @@ export default function Clienti() {
         </div>
 
         <div className="grid grid-cols-1 gap-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)] md:grid-cols-3">
-          {reviews.map((r) => (
+          {reviews.map((r, idx) => (
             <article
-              key={r.author}
-              className="group relative flex flex-col justify-between bg-white p-8 transition-colors duration-300 hover:bg-[hsl(0,0%,98%)]"
+              key={idx}
+              className="group relative flex min-h-[420px] flex-col justify-between bg-white p-8 transition-colors duration-300 hover:bg-[hsl(0,0%,98%)]"
             >
               <div>
                 <span
@@ -213,16 +213,24 @@ export default function Clienti() {
                 >
                   &ldquo;
                 </span>
-                <p className="-mt-4 font-body text-[15px] leading-relaxed text-black">
+                <p className="-mt-4 font-body text-[15px] leading-[1.7] text-black">
                   {r.text}
                 </p>
               </div>
-              <div className="mt-8 border-t border-[hsl(0,0%,91%)] pt-4">
-                <div className="font-display text-[18px] font-black uppercase tracking-tight text-black">
-                  {r.author}
+              <div className="mt-8 flex items-center gap-4 border-t border-[hsl(0,0%,91%)] pt-5">
+                <div
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[hsl(0,0%,93%)] font-body text-[9px] font-semibold uppercase tracking-[1px] text-[hsl(0,0%,53%)]"
+                  aria-label="Foto autore testimonianza"
+                >
+                  [FOTO]
                 </div>
-                <div className="font-body text-[11px] font-medium uppercase tracking-[2px] text-[hsl(0,0%,53%)]">
-                  {r.role}
+                <div className="min-w-0">
+                  <div className="font-display text-[16px] font-black uppercase tracking-tight text-black">
+                    {r.author}
+                  </div>
+                  <div className="font-body text-[11px] font-medium uppercase tracking-[2px] text-[hsl(0,0%,53%)]">
+                    {r.role} · {r.company}
+                  </div>
                 </div>
               </div>
               <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
