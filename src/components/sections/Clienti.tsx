@@ -58,9 +58,6 @@ const clients = [
   { name: "Allevamento Podolica Glisci", logo: brand28 },
 ];
 
-const reviews = [
-];
-
 const caseStudies = [
   {
     n: 1,
@@ -85,21 +82,24 @@ const caseStudies = [
   },
 ];
 
-const reviewsPlaceholder = [
+const reviews = [
   {
-    text: "BrandFlix ha rivoluzionato la nostra immagine. Professionalità, creatività e risultati concreti fin dal primo mese.",
-    author: "Marco R.",
-    role: "Titolare, Ristorante",
+    text: "[Testimonianza specifica con un episodio o un risultato concreto. Es: «Dopo il rebrand abbiamo aperto due punti vendita in 8 mesi e i clienti ci riconoscono anche fuori dalla nostra città.» — minimo 4 righe, evitare frasi generiche tipo «ottimo lavoro» o «molto professionali».]",
+    author: "[Nome Cognome]",
+    role: "[Ruolo]",
+    company: "[Azienda]",
   },
   {
-    text: "Finalmente un'agenzia che ascolta davvero. Il restyling del brand ha portato un aumento reale di clienti in negozio.",
-    author: "Giulia P.",
-    role: "Founder, Beauty Store",
+    text: "[Testimonianza narrativa che racconti il prima e il dopo. Quale problema concreto avevate, cosa è cambiato dopo il lavoro con BrandFlix, quale risultato misurabile è arrivato. Almeno 4-5 righe, con un dettaglio specifico che renda la storia credibile.]",
+    author: "[Nome Cognome]",
+    role: "[Ruolo]",
+    company: "[Azienda]",
   },
   {
-    text: "Strategia chiara, esecuzione impeccabile. I social del nostro hotel non sono mai andati così bene. Consigliatissimi.",
-    author: "Luca M.",
-    role: "Direttore, Boutique Hotel",
+    text: "[Testimonianza con un episodio specifico legato al processo di lavoro o alla consegna. Una frase che racconti perché hai scelto BrandFlix invece di un'altra agenzia (o di un tool AI), e cosa avresti perso a non farlo. Minimo 4-5 righe.]",
+    author: "[Nome Cognome]",
+    role: "[Ruolo]",
+    company: "[Azienda]",
   },
 ];
 
