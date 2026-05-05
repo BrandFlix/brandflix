@@ -58,30 +58,6 @@ const clients = [
   { name: "Allevamento Podolica Glisci", logo: brand28 },
 ];
 
-const caseStudies = [
-  {
-    n: 1,
-    sector: "Ristorazione",
-    title: "[Titolo case study]",
-    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
-    result: "[+X% di vendite in Y mesi]",
-  },
-  {
-    n: 2,
-    sector: "Beauty",
-    title: "[Titolo case study]",
-    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
-    result: "[+X% nuovi clienti in Y mesi]",
-  },
-  {
-    n: 3,
-    sector: "Hospitality",
-    title: "[Titolo case study]",
-    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
-    result: "[+X% prenotazioni dirette]",
-  },
-];
-
 const reviews = [
   {
     text: "[Testimonianza specifica con un episodio o un risultato concreto. Es: «Dopo il rebrand abbiamo aperto due punti vendita in 8 mesi e i clienti ci riconoscono anche fuori dalla nostra città.» — minimo 4 righe, evitare frasi generiche tipo «ottimo lavoro» o «molto professionali».]",
