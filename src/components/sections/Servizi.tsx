@@ -6,6 +6,15 @@ const tabs = [
     label: "Naming",
     title: "Il nome che resti.",
     desc: "Il tuo nome è il primo logo che hai. Lo pronunciano prima ancora di vederti. Un naming sbagliato costa anni di lavoro di recupero. Noi lo costruiamo con metodo: analisi di mercato, architettura linguistica, verifica legale.",
+    forWho: "Imprese in fase di lancio, brand in repositioning, nuove linee di prodotto che cercano un nome che resista al tempo e ai mercati esteri.",
+    includes: [
+      "Analisi competitiva e mappa semantica",
+      "Shortlist di nomi con motivazione strategica",
+      "Verifica disponibilità dominio e marchio",
+      "Tagline e payoff coordinati",
+      "Linee guida di pronuncia e tono",
+    ],
+    timing: "2–4 settimane",
     tags: ["Naming aziendale", "Naming di prodotto", "Tagline", "Verifica disponibilità"],
     cta: "Parliamo del tuo nome →",
   },
@@ -14,6 +23,15 @@ const tabs = [
     label: "Logo & Identità",
     title: "Il segno che identifica.",
     desc: "Un logo non è un'immagine bella. È un sistema che funziona su un biglietto da visita, su uno striscione di 10 metri e su un'icona da 32 pixel. Progettiamo identità visive che resistono al tempo.",
+    forWho: "Brand al primo logo serio o aziende esistenti che si sentono strette in un'identità ereditata, datata o costruita senza metodo.",
+    includes: [
+      "Logo principale + varianti (orizzontale, verticale, monogramma)",
+      "Sistema cromatico e tipografico",
+      "Brand manual completo in PDF",
+      "File vettoriali pronti per ogni uso",
+      "Declinazioni applicative (carta intestata, social, packaging base)",
+    ],
+    timing: "4–6 settimane",
     tags: ["Logo ex-novo", "Restyling", "Brand manual", "Declinazioni"],
     cta: "Parliamo della tua identità →",
   },
@@ -22,6 +40,15 @@ const tabs = [
     label: "Insegne & Vetrine",
     title: "La tua vetrina parla 24/7.",
     desc: "La tua insegna lavora anche la domenica alle tre di notte. Progettazione grafica e supervisione produzione per insegne, vetrine, totem e segnaletica.",
+    forWho: "Negozi, ristoranti, hotel e attività con un punto vendita fisico che vogliono trasformare la facciata in un mezzo di acquisizione clienti.",
+    includes: [
+      "Progetto grafico esecutivo dell'insegna",
+      "Concept e layout vetrine stagionali",
+      "Segnaletica interna ed esterna coordinata",
+      "Specifiche tecniche per il fornitore di stampa/produzione",
+      "Supervisione installazione",
+    ],
+    timing: "3–5 settimane (escluso tempi di produzione)",
     tags: ["Insegne luminose", "Vetrine", "Totem", "Segnaletica"],
     cta: "Parliamo del tuo spazio →",
   },
@@ -30,6 +57,15 @@ const tabs = [
     label: "Social Media Design",
     title: "Smetti di sembrare tutti gli altri.",
     desc: "I tuoi post si scrollano via in 0,3 secondi. Per fermare il pollice ci vuole un sistema visivo riconoscibile, non singoli contenuti ben fatti.",
+    forWho: "Brand già attivi sui social ma indistinguibili dai competitor, o aziende che vogliono partire bene fin dal primo post.",
+    includes: [
+      "Sistema visivo dedicato (griglia, palette, tipografia social)",
+      "Template Instagram (post, carousel, reel cover)",
+      "Template Stories e highlight icons",
+      "Template LinkedIn per profilo aziendale e personal branding",
+      "Linee guida d'uso per il social media manager",
+    ],
+    timing: "2–3 settimane",
     tags: ["Template Instagram", "LinkedIn", "Carousel", "Stories"],
     cta: "Parliamo dei tuoi social →",
   },
@@ -38,6 +74,15 @@ const tabs = [
     label: "Fotografia",
     title: "Le immagini che costruiscono fiducia.",
     desc: "Le stock photo non raccontano la tua storia. Fotografia del team, degli spazi, del prodotto. Immagini che fanno sentire le persone già dentro prima ancora di entrare.",
+    forWho: "Aziende stanche delle stock photo, ristoranti, hotel, retailer e brand di prodotto che vogliono un archivio visivo proprio e coerente.",
+    includes: [
+      "Mood board e shot list condivisa",
+      "Servizio in studio o on-location con team dedicato",
+      "Ritratti del team e ambientati",
+      "Fotografia di prodotto e dettagli still life",
+      "Selezione, post-produzione e consegna in più formati",
+    ],
+    timing: "1–2 giornate di shooting + 1–2 settimane di post-produzione",
     tags: ["Ritratti team", "Fotografia prodotto", "Brand storytelling", "Reportage"],
     cta: "Parliamo delle tue foto →",
   },
@@ -46,6 +91,15 @@ const tabs = [
     label: "Video Corporate",
     title: "Il video che convince prima che parliate.",
     desc: "Un video istituzionale ben fatto risponde a domande che i clienti non hanno ancora fatto. Scripting, regia, riprese e post-produzione internamente.",
+    forWho: "Aziende che hanno bisogno di un video manifesto, brand di prodotto e attività che vogliono raccontare il dietro le quinte con una qualità cinema.",
+    includes: [
+      "Concept, sceneggiatura e storyboard",
+      "Riprese con attrezzatura professionale e team in loco",
+      "Montaggio, color grading e sound design",
+      "Versioni multiple (sito, social verticale, presentazioni)",
+      "Sottotitoli e adattamenti linguistici",
+    ],
+    timing: "3–6 settimane in base alla complessità",
     tags: ["Video istituzionale", "Video prodotto", "Social video", "Post-produzione"],
     cta: "Parliamo del tuo video →",
   },
@@ -102,6 +156,40 @@ export default function Servizi() {
             {t.title}
           </div>
           <p className="mt-5 font-body text-[15px] leading-[1.8] text-[hsl(0,0%,40%)]">{t.desc}</p>
+
+          <div className="mt-7 border-t border-[hsl(0,0%,91%)] pt-5">
+            <div className="font-body text-[10px] font-semibold uppercase tracking-[3px] text-magenta">
+              Per chi è
+            </div>
+            <p className="mt-2 font-body text-[14px] leading-[1.7] text-[hsl(0,0%,40%)]">
+              {t.forWho}
+            </p>
+          </div>
+
+          <div className="mt-6 border-t border-[hsl(0,0%,91%)] pt-5">
+            <div className="font-body text-[10px] font-semibold uppercase tracking-[3px] text-magenta">
+              Cosa include
+            </div>
+            <ul className="mt-2 space-y-1.5">
+              {t.includes.map((d) => (
+                <li
+                  key={d}
+                  className="flex gap-3 font-body text-[14px] leading-[1.6] text-[hsl(0,0%,40%)]"
+                >
+                  <span className="mt-[9px] block h-[5px] w-[5px] shrink-0 bg-amber" />
+                  <span>{d}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-6 border-t border-[hsl(0,0%,91%)] pt-5">
+            <div className="font-body text-[10px] font-semibold uppercase tracking-[3px] text-magenta">
+              Tempi
+            </div>
+            <p className="mt-2 font-body text-[14px] leading-[1.7] text-black">{t.timing}</p>
+          </div>
+
           <div className="mt-7 flex flex-wrap gap-2">
             {t.tags.map((tag) => (
               <span
