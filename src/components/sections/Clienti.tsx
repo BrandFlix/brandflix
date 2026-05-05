@@ -59,6 +59,33 @@ const clients = [
 ];
 
 const reviews = [
+];
+
+const caseStudies = [
+  {
+    n: 1,
+    sector: "Ristorazione",
+    title: "[Titolo case study]",
+    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
+    result: "[+X% di vendite in Y mesi]",
+  },
+  {
+    n: 2,
+    sector: "Beauty",
+    title: "[Titolo case study]",
+    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
+    result: "[+X% nuovi clienti in Y mesi]",
+  },
+  {
+    n: 3,
+    sector: "Hospitality",
+    title: "[Titolo case study]",
+    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
+    result: "[+X% prenotazioni dirette]",
+  },
+];
+
+const reviewsPlaceholder = [
   {
     text: "BrandFlix ha rivoluzionato la nostra immagine. Professionalità, creatività e risultati concreti fin dal primo mese.",
     author: "Marco R.",
