@@ -58,21 +58,48 @@ const clients = [
   { name: "Allevamento Podolica Glisci", logo: brand28 },
 ];
 
+const caseStudies = [
+  {
+    n: 1,
+    sector: "Ristorazione",
+    title: "[Titolo case study]",
+    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
+    result: "[+X% di vendite in Y mesi]",
+  },
+  {
+    n: 2,
+    sector: "Beauty",
+    title: "[Titolo case study]",
+    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
+    result: "[+X% nuovi clienti in Y mesi]",
+  },
+  {
+    n: 3,
+    sector: "Hospitality",
+    title: "[Titolo case study]",
+    desc: "[Problema → Soluzione: 2 righe che descrivono la sfida del cliente e l'intervento di BrandFlix sul brand.]",
+    result: "[+X% prenotazioni dirette]",
+  },
+];
+
 const reviews = [
   {
-    text: "BrandFlix ha rivoluzionato la nostra immagine. Professionalità, creatività e risultati concreti fin dal primo mese.",
-    author: "Marco R.",
-    role: "Titolare, Ristorante",
+    text: "[Testimonianza specifica con un episodio o un risultato concreto. Es: «Dopo il rebrand abbiamo aperto due punti vendita in 8 mesi e i clienti ci riconoscono anche fuori dalla nostra città.» — minimo 4 righe, evitare frasi generiche tipo «ottimo lavoro» o «molto professionali».]",
+    author: "[Nome Cognome]",
+    role: "[Ruolo]",
+    company: "[Azienda]",
   },
   {
-    text: "Finalmente un'agenzia che ascolta davvero. Il restyling del brand ha portato un aumento reale di clienti in negozio.",
-    author: "Giulia P.",
-    role: "Founder, Beauty Store",
+    text: "[Testimonianza narrativa che racconti il prima e il dopo. Quale problema concreto avevate, cosa è cambiato dopo il lavoro con BrandFlix, quale risultato misurabile è arrivato. Almeno 4-5 righe, con un dettaglio specifico che renda la storia credibile.]",
+    author: "[Nome Cognome]",
+    role: "[Ruolo]",
+    company: "[Azienda]",
   },
   {
-    text: "Strategia chiara, esecuzione impeccabile. I social del nostro hotel non sono mai andati così bene. Consigliatissimi.",
-    author: "Luca M.",
-    role: "Direttore, Boutique Hotel",
+    text: "[Testimonianza con un episodio specifico legato al processo di lavoro o alla consegna. Una frase che racconti perché hai scelto BrandFlix invece di un'altra agenzia (o di un tool AI), e cosa avresti perso a non farlo. Minimo 4-5 righe.]",
+    author: "[Nome Cognome]",
+    role: "[Ruolo]",
+    company: "[Azienda]",
   },
 ];
 
@@ -107,6 +134,63 @@ export default function Clienti() {
         <LogoMarquee items={clients.slice(14)} reverse />
       </div>
 
+      {/* Case study in evidenza */}
+      <div className="reveal mt-20">
+        <div className="mb-10 flex items-center gap-3">
+          <span className="block h-[1px] w-10 bg-black" />
+          <span className="font-body text-[10px] font-semibold uppercase tracking-[4px] text-black">
+            Case study in evidenza
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 gap-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)] md:grid-cols-3">
+          {caseStudies.map((cs) => (
+            <a
+              key={cs.title}
+              href="#contatti"
+              className="group relative flex flex-col bg-white transition-colors duration-300 hover:bg-[hsl(0,0%,98%)]"
+              aria-label={`Leggi il case study: ${cs.title}`}
+            >
+              {/* Image 16:9 placeholder */}
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-[hsl(0,0%,93%)]">
+                <div className="absolute inset-0 flex items-center justify-center font-body text-[11px] font-semibold uppercase tracking-[3px] text-[hsl(0,0%,53%)]">
+                  [IMMAGINE CASE STUDY {cs.n}]
+                </div>
+              </div>
+
+              <div className="flex flex-1 flex-col p-8">
+                <div className="font-body text-[10px] font-semibold uppercase tracking-[3px] text-[hsl(0,0%,53%)]">
+                  {cs.sector}
+                </div>
+                <div className="mt-3 font-display text-[22px] font-black uppercase leading-[1.05] tracking-tight text-black">
+                  {cs.title}
+                </div>
+                <p className="mt-3 font-body text-[14px] leading-[1.65] text-[hsl(0,0%,40%)]">
+                  {cs.desc}
+                </p>
+
+                <div className="mt-6 border-t border-[hsl(0,0%,91%)] pt-5">
+                  <div className="font-body text-[10px] uppercase tracking-[2px] text-[hsl(0,0%,53%)]">
+                    Risultato
+                  </div>
+                  <div
+                    className="mt-1 font-display font-black uppercase leading-[1] text-amber"
+                    style={{ fontSize: "clamp(28px,2.6vw,34px)" }}
+                  >
+                    {cs.result}
+                  </div>
+                </div>
+
+                <span className="mt-7 inline-flex items-center gap-2 font-body text-[12px] font-bold uppercase tracking-[2px] text-black transition-all group-hover:gap-3">
+                  Leggi il case study →
+                </span>
+              </div>
+              <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
+            </a>
+          ))}
+        </div>
+      </div>
+
       {/* Recensioni */}
       <div className="reveal mt-20">
         <div className="mb-10 flex items-center gap-3">
@@ -117,10 +201,10 @@ export default function Clienti() {
         </div>
 
         <div className="grid grid-cols-1 gap-px border border-[hsl(0,0%,91%)] bg-[hsl(0,0%,91%)] md:grid-cols-3">
-          {reviews.map((r) => (
+          {reviews.map((r, idx) => (
             <article
-              key={r.author}
-              className="group relative flex flex-col justify-between bg-white p-8 transition-colors duration-300 hover:bg-[hsl(0,0%,98%)]"
+              key={idx}
+              className="group relative flex min-h-[420px] flex-col justify-between bg-white p-8 transition-colors duration-300 hover:bg-[hsl(0,0%,98%)]"
             >
               <div>
                 <span
@@ -129,16 +213,24 @@ export default function Clienti() {
                 >
                   &ldquo;
                 </span>
-                <p className="-mt-4 font-body text-[15px] leading-relaxed text-black">
+                <p className="-mt-4 font-body text-[15px] leading-[1.7] text-black">
                   {r.text}
                 </p>
               </div>
-              <div className="mt-8 border-t border-[hsl(0,0%,91%)] pt-4">
-                <div className="font-display text-[18px] font-black uppercase tracking-tight text-black">
-                  {r.author}
+              <div className="mt-8 flex items-center gap-4 border-t border-[hsl(0,0%,91%)] pt-5">
+                <div
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[hsl(0,0%,93%)] font-body text-[9px] font-semibold uppercase tracking-[1px] text-[hsl(0,0%,53%)]"
+                  aria-label="Foto autore testimonianza"
+                >
+                  [FOTO]
                 </div>
-                <div className="font-body text-[11px] font-medium uppercase tracking-[2px] text-[hsl(0,0%,53%)]">
-                  {r.role}
+                <div className="min-w-0">
+                  <div className="font-display text-[16px] font-black uppercase tracking-tight text-black">
+                    {r.author}
+                  </div>
+                  <div className="font-body text-[11px] font-medium uppercase tracking-[2px] text-[hsl(0,0%,53%)]">
+                    {r.role} · {r.company}
+                  </div>
                 </div>
               </div>
               <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
