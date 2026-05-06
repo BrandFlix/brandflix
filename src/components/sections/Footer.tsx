@@ -1,4 +1,5 @@
 import { Facebook, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 import brandflixLogo from "@/assets/brandflix-logo.png";
 
 const cols = [
@@ -79,6 +80,11 @@ export default function Footer() {
         />
         <div className="font-body text-[14px] text-muted-foreground md:text-[16px]">
           Branding · Storytelling · Marketing · Video · Design
+        </div>
+        <div className="font-body text-[13px] text-muted-2">
+          <Link to="/privacy" className="transition-colors hover:text-primary">Privacy Policy</Link>
+          <span className="mx-2">·</span>
+          <Link to="/cookie" className="transition-colors hover:text-primary">Cookie Policy</Link>
         </div>
         <div className="font-body text-[12px] text-muted-2">
           © {new Date().getFullYear()} BrandFlix
