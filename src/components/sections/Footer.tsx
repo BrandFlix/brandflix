@@ -1,4 +1,5 @@
 import { Facebook, Instagram } from "lucide-react";
+import brandflixLogo from "@/assets/brandflix-logo.png";
 
 const cols = [
   {
@@ -70,9 +71,12 @@ export default function Footer() {
       </div>
 
       <div className="mt-14 flex flex-col items-center gap-4 border-t border-border pt-8 text-center">
-        <div className="font-display text-[32px] font-black tracking-[-0.5px] text-foreground md:text-[40px]">
-          Brand<span className="text-primary">Flix</span>
-        </div>
+        <img
+          src={brandflixLogo}
+          alt="BrandFlix"
+          className="h-12 w-auto md:h-16"
+          loading="lazy"
+        />
         <div className="font-body text-[14px] text-muted-foreground md:text-[16px]">
           Branding · Storytelling · Marketing · Video · Design
         </div>
