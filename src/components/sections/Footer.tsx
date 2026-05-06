@@ -69,11 +69,17 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="mt-14 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-6">
-        <span className="font-body text-[12px] text-muted-2">
-          © 2025 BrandFlix · P.IVA 00000000000 · Realizzato con intenzione.
-        </span>
-        <div className="flex gap-3">
+      <div className="mt-14 flex flex-col items-center gap-4 border-t border-border pt-8 text-center">
+        <div className="font-display text-[32px] font-black tracking-[-0.5px] text-foreground md:text-[40px]">
+          Brand<span className="text-primary">Flix</span>
+        </div>
+        <div className="font-body text-[14px] text-muted-foreground md:text-[16px]">
+          Branding · Storytelling · Marketing · Video · Design
+        </div>
+        <div className="font-body text-[12px] text-muted-2">
+          © {new Date().getFullYear()} BrandFlix
+        </div>
+        <div className="mt-2 flex gap-3">
           {socialIcons.map((s) => (
             <a
               key={s.l}
