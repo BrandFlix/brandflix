@@ -74,7 +74,7 @@ export default function Footer() {
         <img
           src={brandflixLogo}
           alt="BrandFlix"
-          className="h-12 w-auto md:h-16"
+          className="h-7 w-auto md:h-9"
           loading="lazy"
         />
         <div className="font-body text-[14px] text-muted-foreground md:text-[16px]">
