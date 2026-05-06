@@ -60,22 +60,22 @@ const clients = [
 
 const reviews = [
   {
-    text: "[Testimonianza specifica con un episodio o un risultato concreto. Es: «Dopo il rebrand abbiamo aperto due punti vendita in 8 mesi e i clienti ci riconoscono anche fuori dalla nostra città.» — minimo 4 righe, evitare frasi generiche tipo «ottimo lavoro» o «molto professionali».]",
-    author: "[Nome Cognome]",
-    role: "[Ruolo]",
-    company: "[Azienda]",
+    text: "Quando abbiamo deciso di aprire, non avevamo ancora un nome. BrandFlix ci ha aiutati a costruire tutto da zero: il naming, il logo, e poi ci ha guidati passo dopo passo nella realizzazione dell'insegna. Oggi le persone si ricordano di noi anche solo per il nome — e questo vale già tanto.",
+    author: "Domenico & Davide",
+    role: "Titolari",
+    company: "Dalmia Market",
   },
   {
-    text: "[Testimonianza narrativa che racconti il prima e il dopo. Quale problema concreto avevate, cosa è cambiato dopo il lavoro con BrandFlix, quale risultato misurabile è arrivato. Almeno 4-5 righe, con un dettaglio specifico che renda la storia credibile.]",
-    author: "[Nome Cognome]",
-    role: "[Ruolo]",
-    company: "[Azienda]",
+    text: "Avevamo un logo vecchio e un'insegna che non ci rappresentava più. Volevamo un'immagine più moderna, più riconoscibile. BrandFlix ha rinnovato tutto: logo, insegna e grafiche per i social. Adesso quando i clienti entrano in agenzia o vedono un nostro post, l'immagine è finalmente all'altezza del servizio che offriamo.",
+    author: "Giovanni",
+    role: "Titolare",
+    company: "Kalindi Viaggi",
   },
   {
-    text: "[Testimonianza con un episodio specifico legato al processo di lavoro o alla consegna. Una frase che racconti perché hai scelto BrandFlix invece di un'altra agenzia (o di un tool AI), e cosa avresti perso a non farlo. Minimo 4-5 righe.]",
-    author: "[Nome Cognome]",
-    role: "[Ruolo]",
-    company: "[Azienda]",
+    text: "Il nostro logo era lì da anni — funzionava, ma era rimasto indietro. Con BrandFlix abbiamo fatto un restyling che ha mantenuto l'identità della nostra azienda, rendendola più pulita e professionale. Un dettaglio che sembra piccolo, ma che i clienti notano.",
+    author: "Giuseppe",
+    role: "Titolare",
+    company: "Rondinelli Strutture in Metallo",
   },
 ];
 
