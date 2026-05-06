@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 
 const services = [
   "Naming aziendale o di prodotto",
@@ -25,10 +25,47 @@ const inputCls =
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    setError(false);
+
+    const formData = new FormData(e.currentTarget);
+    // Honeypot: if filled, silently abort
+    if (formData.get("botcheck")) {
+      setLoading(false);
+      return;
+    }
+    const data: Record<string, FormDataEntryValue> = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setSent(true);
+        formRef.current?.reset();
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -86,13 +123,24 @@ export default function Contact() {
         </div>
 
         {/* RIGHT — form */}
-        <form onSubmit={onSubmit} className="reveal flex flex-col gap-3">
+        <form ref={formRef} onSubmit={onSubmit} className="reveal flex flex-col gap-3">
+          <input type="hidden" name="access_key" value="2209827f-4537-4d32-a0c6-50bd7d34348a" />
+          <input type="hidden" name="subject" value="Nuovo contatto da brandflix.it" />
+          <input type="hidden" name="from_name" value="BrandFlix Website" />
+          <input
+            type="checkbox"
+            name="botcheck"
+            tabIndex={-1}
+            autoComplete="off"
+            style={{ display: "none" }}
+          />
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <input className={inputCls} placeholder="Mario Rossi" aria-label="Nome e cognome" required />
-            <input className={inputCls} placeholder="Nome dell'attività" aria-label="Azienda" />
+            <input name="name" className={inputCls} placeholder="Mario Rossi" aria-label="Nome e cognome" required />
+            <input name="company" className={inputCls} placeholder="Nome dell'attività" aria-label="Azienda" />
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <input
+              name="email"
               className={inputCls}
               type="email"
               placeholder="mario@esempio.it"
@@ -100,13 +148,14 @@ export default function Contact() {
               required
             />
             <input
+              name="phone"
               className={inputCls}
               type="tel"
               placeholder="+39 000 000 0000"
               aria-label="Telefono"
             />
           </div>
-          <select className={inputCls} aria-label="Cosa ti serve" defaultValue="">
+          <select name="service" className={inputCls} aria-label="Cosa ti serve" defaultValue="">
             <option value="" disabled>
               Cosa ti serve?
             </option>
@@ -117,6 +166,7 @@ export default function Contact() {
             ))}
           </select>
           <textarea
+            name="message"
             className={inputCls}
             style={{ minHeight: 120, resize: "vertical" }}
             placeholder="Descrivi brevemente la tua attività e cosa vorresti ottenere."
@@ -124,15 +174,22 @@ export default function Contact() {
           />
           <button
             type="submit"
-            disabled={sent}
+            disabled={sent || loading}
             className={`mt-2 self-start rounded-md px-7 py-[13px] font-body text-[13px] font-bold transition-all ${
               sent
                 ? "cursor-not-allowed bg-surface text-primary"
+                : loading
+                ? "cursor-wait bg-primary/70 text-primary-foreground"
                 : "bg-primary text-primary-foreground hover:opacity-90"
             }`}
           >
-            {sent ? "Richiesta inviata ✓" : "Invia la richiesta →"}
+            {sent ? "Richiesta inviata ✓" : loading ? "Invio in corso..." : "Invia la richiesta →"}
           </button>
+          {error && (
+            <p className="mt-2 font-body text-[13px] leading-[1.6] text-destructive">
+              Errore nell'invio. Riprova o scrivici a info@brandflix.it
+            </p>
+          )}
           <p className="mt-2 font-body text-[12px] leading-[1.6] text-muted-2">
             Risponderemo entro 24 ore lavorative. Nessuno spam.
           </p>
