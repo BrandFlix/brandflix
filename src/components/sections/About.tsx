@@ -48,8 +48,8 @@ export default function About() {
         </p>
         <div className="mt-9 flex flex-wrap gap-10">
           {[
-            { n: "85", suf: "%", l: "Retention clienti" },
-            { n: "+40", suf: "%", l: "Crescita conversioni media" },
+            { n: "100", suf: "%", l: "Progetti custom" },
+            { n: "Italia", suf: "", l: "Da Policoro per tutta Italia" },
           ].map((s) => (
             <div key={s.l}>
               <div

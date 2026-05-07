@@ -25,8 +25,6 @@ const cols = [
     items: [
       { l: "info@brandflix.it", href: "mailto:info@brandflix.it" },
       { l: "+39 328 743 0868", href: "tel:+393287430868" },
-      { l: "Privacy policy", href: "#" },
-      { l: "Termini di servizio", href: "#" },
     ],
   },
 ];
