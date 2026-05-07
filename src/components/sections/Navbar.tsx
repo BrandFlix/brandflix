@@ -1,18 +1,32 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
 import logo from "@/assets/logo-brandflix.png";
 
 const links = [
-  { href: "#about", label: "Chi siamo" },
-  { href: "#clienti", label: "Clienti" },
-  { href: "#servizi", label: "Servizi" },
-  { href: "#contatti", label: "Contatti" },
+  { id: "about", label: "Chi siamo" },
+  { id: "clienti", label: "Clienti" },
+  { id: "servizi", label: "Servizi" },
+  { id: "contatti", label: "Contatti" },
 ];
 
 export default function Navbar() {
   const scrolled = useScrollPosition(20);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (sectionId: string) => {
+    setOpen(false);
+    if (location.pathname === "/") {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(`/#${sectionId}`);
+    }
+  };
+
+  const handleCtaClick = () => handleNavClick("contatti");
 
   return (
     <>
@@ -24,28 +38,30 @@ export default function Navbar() {
         }}
       >
         <div className="mx-auto flex h-full max-w-[1400px] items-center justify-between px-[5vw]">
-          <a href="#top" className="flex items-center leading-none">
+          <Link to="/" className="flex items-center leading-none">
             <img src={logo} alt="BrandFlix" className="h-7 w-auto sm:h-8" />
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-9 sm:flex">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
+              <button
+                key={l.id}
+                type="button"
+                onClick={() => handleNavClick(l.id)}
                 className="font-body text-[14px] text-muted-2 transition-colors hover:text-primary"
               >
                 {l.label}
-              </a>
+              </button>
             ))}
           </nav>
 
-          <a
-            href="#contatti"
+          <button
+            type="button"
+            onClick={handleCtaClick}
             className="hidden bg-primary px-6 py-[10px] font-body text-[13px] font-bold text-primary-foreground transition-opacity hover:opacity-[0.88] sm:inline-block"
           >
             Parliamoci →
-          </a>
+          </button>
 
           <button
             aria-label="Apri menu"
@@ -60,29 +76,31 @@ export default function Navbar() {
       {open && (
         <div className="fixed inset-0 z-[100] flex flex-col bg-background sm:hidden">
           <div className="flex h-[68px] items-center justify-between px-[5vw]">
-            <img src={logo} alt="BrandFlix" className="h-7 w-auto" />
+            <Link to="/" onClick={() => setOpen(false)}>
+              <img src={logo} alt="BrandFlix" className="h-7 w-auto" />
+            </Link>
             <button aria-label="Chiudi menu" onClick={() => setOpen(false)} className="text-foreground">
               <X size={28} />
             </button>
           </div>
           <nav className="flex flex-1 flex-col items-center justify-center gap-8">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
+              <button
+                key={l.id}
+                type="button"
+                onClick={() => handleNavClick(l.id)}
                 className="font-display text-[36px] font-black uppercase text-foreground hover:text-primary"
               >
                 {l.label}
-              </a>
+              </button>
             ))}
-            <a
-              href="#contatti"
-              onClick={() => setOpen(false)}
+            <button
+              type="button"
+              onClick={handleCtaClick}
               className="mt-6 bg-primary px-7 py-3 font-body text-[14px] font-bold text-primary-foreground"
             >
               Parliamoci →
-            </a>
+            </button>
           </nav>
         </div>
       )}
