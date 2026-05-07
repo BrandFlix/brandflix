@@ -29,9 +29,9 @@ export default function Hero() {
                 letterSpacing: "-2px",
               }}
             >
-              <span className="block animate-fade-up [animation-delay:0.05s]">Costruiamo</span>
-              <span className="block animate-fade-up text-primary [animation-delay:0.2s]">brand che</span>
-              <span className="block animate-fade-up [animation-delay:0.35s]">restano.</span>
+              <span className="block animate-fade-up [animation-delay:0.05s]">Premi play.</span>
+              <span className="block animate-fade-up [animation-delay:0.2s]">Il resto lo</span>
+              <span className="block animate-fade-up text-primary [animation-delay:0.35s]">facciamo noi.</span>
             </h1>
 
             <p
