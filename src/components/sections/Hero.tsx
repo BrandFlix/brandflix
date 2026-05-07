@@ -62,15 +62,15 @@ export default function Hero() {
           <div className="flex flex-col items-start gap-6 lg:items-end">
             <div className="flex w-full flex-col gap-4 sm:flex-row lg:flex-col lg:items-end">
               {[
-                { n: "94%", l: "Clienti che tornano" },
-                { n: "120+", l: "Brand costruiti da zero" },
+                { n: "Brand pensati", l: "non improvvisati" },
+                { n: "Design costruito", l: "non scaricato" },
               ].map((s) => (
                 <div
                   key={s.n}
                   className="min-w-[180px] border border-border bg-surface px-7 py-6"
                 >
                   <div
-                    className="font-display text-[52px] font-black text-primary"
+                    className="font-display text-[32px] font-black uppercase text-primary"
                     style={{ lineHeight: 1 }}
                   >
                     {s.n}
