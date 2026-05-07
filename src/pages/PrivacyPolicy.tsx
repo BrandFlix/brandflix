@@ -1,14 +1,14 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 
 export default function PrivacyPolicy() {
-  useEffect(() => {
-    document.title = "Privacy Policy | BrandFlix";
-  }, []);
-
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>Privacy Policy | BrandFlix</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <Navbar />
       <article className="mx-auto max-w-[800px] px-[5vw] pb-24 pt-32 font-body text-[15px] leading-[1.75] text-muted-foreground">
         <h1 className="mb-4 font-display text-[44px] font-black uppercase leading-[1.05] tracking-[-1px] text-foreground md:text-[56px]">
