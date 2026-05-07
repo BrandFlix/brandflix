@@ -11,6 +11,8 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/sections/WhatsAppButton";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const ticker1 = [
   "Naming aziendale",
@@ -36,6 +38,15 @@ const ticker2 = [
 
 const Index = () => {
   useScrollReveal();
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [location]);
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
