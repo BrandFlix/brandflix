@@ -89,9 +89,9 @@ export default function Navbar() {
       {open && (
         <div className="fixed inset-0 z-[100] flex flex-col bg-background sm:hidden">
           <div className="flex h-[68px] items-center justify-between px-[5vw]">
-            <Link to="/" onClick={() => setOpen(false)}>
+            <button type="button" onClick={handleLogoClick} className="flex items-center leading-none">
               <img src={logo} alt="BrandFlix" className="h-7 w-auto" />
-            </Link>
+            </button>
             <button aria-label="Chiudi menu" onClick={() => setOpen(false)} className="text-foreground">
               <X size={28} />
             </button>
