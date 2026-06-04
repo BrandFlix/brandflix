@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
 import logo from "@/assets/logo-brandflix.png";
 
@@ -28,6 +28,15 @@ export default function Navbar() {
 
   const handleCtaClick = () => handleNavClick("contatti");
 
+  const handleLogoClick = () => {
+    setOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <>
       <header
@@ -38,9 +47,13 @@ export default function Navbar() {
         }}
       >
         <div className="mx-auto flex h-full max-w-[1400px] items-center justify-between px-[5vw]">
-          <Link to="/" className="flex items-center leading-none">
+          <button
+            type="button"
+            onClick={handleLogoClick}
+            className="flex items-center leading-none"
+          >
             <img src={logo} alt="BrandFlix" className="h-7 w-auto sm:h-8" />
-          </Link>
+          </button>
 
           <nav className="hidden items-center gap-9 sm:flex">
             {links.map((l) => (
@@ -76,9 +89,9 @@ export default function Navbar() {
       {open && (
         <div className="fixed inset-0 z-[100] flex flex-col bg-background sm:hidden">
           <div className="flex h-[68px] items-center justify-between px-[5vw]">
-            <Link to="/" onClick={() => setOpen(false)}>
+            <button type="button" onClick={handleLogoClick} className="flex items-center leading-none">
               <img src={logo} alt="BrandFlix" className="h-7 w-auto" />
-            </Link>
+            </button>
             <button aria-label="Chiudi menu" onClick={() => setOpen(false)} className="text-foreground">
               <X size={28} />
             </button>

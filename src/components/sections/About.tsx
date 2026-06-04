@@ -46,23 +46,6 @@ export default function About() {
           chi. Noi costruiamo sistemi di identità coerenti — dal nome al video corporate — che
           fanno sì che il tuo brand venga ricordato anche quando tu non sei nella stanza.
         </p>
-        <div className="mt-9 flex flex-wrap gap-10">
-          {[
-            { n: "100", suf: "%", l: "Progetti custom" },
-            { n: "Italia", suf: "", l: "Da Policoro per tutta Italia" },
-          ].map((s) => (
-            <div key={s.l}>
-              <div
-                className="font-display font-black text-black"
-                style={{ fontSize: 60, lineHeight: 1 }}
-              >
-                {s.n}
-                <span className="text-magenta">{s.suf}</span>
-              </div>
-              <div className="mt-1 font-body text-[13px] text-[hsl(0,0%,53%)]">{s.l}</div>
-            </div>
-          ))}
-        </div>
 
         <div className="mt-12 border-l-[3px] border-magenta pl-6">
           <h4
