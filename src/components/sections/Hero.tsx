@@ -58,28 +58,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT */}
-          <div className="flex flex-col items-start gap-6 lg:items-end">
-            <div className="flex w-full flex-col gap-4 sm:flex-row lg:flex-col lg:items-end">
-              {[
-                { n: "Brand pensati", l: "non improvvisati" },
-                { n: "Design costruito", l: "non scaricato" },
-              ].map((s) => (
-                <div
-                  key={s.n}
-                  className="min-w-[180px] border border-border bg-surface px-7 py-6"
-                >
-                  <div
-                    className="font-display text-[32px] font-black uppercase text-primary"
-                    style={{ lineHeight: 1 }}
-                  >
-                    {s.n}
-                  </div>
-                  <div className="mt-1 font-body text-[13px] text-muted-2">{s.l}</div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Payoff scrolling band */}
