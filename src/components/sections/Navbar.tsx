@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
 import logo from "@/assets/logo-brandflix.png";
 
