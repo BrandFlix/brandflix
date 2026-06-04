@@ -28,6 +28,15 @@ export default function Navbar() {
 
   const handleCtaClick = () => handleNavClick("contatti");
 
+  const handleLogoClick = () => {
+    setOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <>
       <header
@@ -38,9 +47,13 @@ export default function Navbar() {
         }}
       >
         <div className="mx-auto flex h-full max-w-[1400px] items-center justify-between px-[5vw]">
-          <Link to="/" className="flex items-center leading-none">
+          <button
+            type="button"
+            onClick={handleLogoClick}
+            className="flex items-center leading-none"
+          >
             <img src={logo} alt="BrandFlix" className="h-7 w-auto sm:h-8" />
-          </Link>
+          </button>
 
           <nav className="hidden items-center gap-9 sm:flex">
             {links.map((l) => (
